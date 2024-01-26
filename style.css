@@ -1,0 +1,151 @@
+/* Applying properties over all the elements using universal selector */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'montserrat';
+    color: #fff;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+
+
+/* -------------------- NAVBAR -------------------- */
+#nav {
+    height: 130px;
+    width: 100%;
+    /* background-color: red; */
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 50px;
+    /* Gap between each flexed item*/
+    padding: 0 120px;
+    /* Padding over the whole nav bar, and not over the each flexed item */
+    position: fixed;
+    /* I want navbar to be fixed or sticked onto the top of the website */
+    z-index: 99;
+    /* So, navbar will always be at top, none of the other elemnts, etc will override it's visibility */
+}
+
+#nav img {
+    height: 75px;
+}
+
+#nav h4 {
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+#cursor {
+    height: 25px;
+    width: 25px;
+    background-color: #95C11E;
+    border-radius: 50%;
+    position: fixed;
+    z-index: 99;
+    transition: all linear 0.1s;
+}
+
+#cursor-blur {
+    height: 400px;
+    width: 400px;
+    background-color: #96c11e9a;
+    border-radius: 50%;
+    position: fixed;
+    z-index: 9;
+
+    /* filter is getting used to filter or blurr the things */
+    filter: blur(80px);
+    transition: all linear 0.4s;
+}
+
+video {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    /* Video will cover or occupy the whole screen */
+    position: fixed;
+    z-index: -1;
+}
+
+
+/* 
+Let's say
+parent's height = 0%
+and
+child's height = 100%
+Here, child's 100% height is referring to it's parent
+Here, these parent itself doesn't have any height , so from where it's child will get height
+
+x% height in child = it means it's referring to it's parent's height i.e. it is w.r.t. he parent's height
+xvh height in child = it means it's referring to the whole screen's height and not to any specific element
+*/
+
+#main {
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.37);
+}
+
+#page1 {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    z-index: 10;
+}
+
+#page1>h1 {
+    font-size: 7.5vw;
+    font-weight: 900;
+    position: relative;
+}
+
+/* Pseudo elements - It is used to write something using CSS
+Let's say here we are writing that background line of text "EAT. DRINK. PLAY." */
+#page1 h1::before {
+    content: "EAT. DRINK. PLAY.";
+    position: absolute;
+    top: -0.26rem;
+    left: -0.26rem;
+    color: black;
+    z-index: -1;
+
+    /* Just like we do have border property, but that do add the border over the box of the content
+    Similarly, we do have "-webkit-text-stroke: size color", which does gives border over the text and not it's box */
+    -webkit-text-stroke: 1.5px #95c11e;
+}
+
+#page1>h2 {
+    font-size: 30px;
+    font-weight: 800;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+#page1>p {
+    font-size: 1.2vw;
+    font-weight: 500;
+    width: 40%;
+}
+
+#page2 {
+    height: 100vh;
+    width: 100%;
+    z-index: 10;
+}
+
+/* {
+
+    /* So, that all the content of h4 of "scroller" will come in one line */
+/* white-space: nowrap; */
+/* So, it will not get wraped in a specific block, it will cross it's boundary */
+/* }*/
