@@ -143,9 +143,55 @@ Let's say here we are writing that background line of text "EAT. DRINK. PLAY." *
     z-index: 10;
 }
 
-/* {
+#scroller {
+    display: flex;
+    /* background-color: red; */
+    word-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    position: relative;
+    z-index: 10;
+}
 
+#scroller::-webkit-scrollbar {
+    display: none;
+}
+
+#scroller-in {
+    display: inline-block;
     /* So, that all the content of h4 of "scroller" will come in one line */
-/* white-space: nowrap; */
-/* So, it will not get wraped in a specific block, it will cross it's boundary */
-/* }*/
+    white-space: nowrap;
+    /* So, it will not get wraped in a specific block, it will cross it's boundary */
+
+    animation-name: scroll;
+    animation-duration: 20s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+#scroller h4 {
+    display: inline-block;
+    text-transform: uppercase;
+    font-size: 120px;
+    font-weight: 900;
+    font-family: gilroy;
+    margin-right: 20px;
+    transition: all linear 0.3s;
+    color: transparent;
+    -webkit-text-stroke: 2px #ffffff;
+}
+
+#scroller h4:hover {
+    color: #95C11E;
+    -webkit-text-stroke: 2px black;
+}
+
+@keyframes scroll {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-100%);
+    }
+}
