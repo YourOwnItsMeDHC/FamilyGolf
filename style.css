@@ -195,3 +195,40 @@ Let's say here we are writing that background line of text "EAT. DRINK. PLAY." *
         transform: translateX(-100%);
     }
 }
+
+
+#about-us {
+    width: 100%;
+    height: 40vh;
+    /* background-color: red; */
+    position: relative;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 50px;
+    /* gap: 50px; */
+}
+
+#about-us img {
+    width: 220px;
+    height: 220px;
+    border-radius: 20px;
+    object-fit: cover;
+}
+
+#about-us h3 {
+    font-size: 54px;
+    font-weight: 800;
+    margin-bottom: 30px;
+}
+
+#about-us p {
+    font-size: 20px;
+    line-height: 26px;
+}
+
+#about-us-in {
+    width: 50%;
+    text-align: center;
+}
