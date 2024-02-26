@@ -10,7 +10,7 @@
 html,
 body {
     height: 100%;
-    width: 100%;
+    width: 100%;    
 }
 
 
@@ -93,6 +93,7 @@ xvh height in child = it means it's referring to the whole screen's height and n
 
 #page1 {
     height: 100vh;
+    min-height: 100vh;
     width: 100%;
     position: relative;
     justify-content: center;
@@ -138,7 +139,12 @@ Let's say here we are writing that background line of text "EAT. DRINK. PLAY." *
 }
 
 #page2 {
-    height: 100vh;
+    /* height: 100vh; */
+    /* what if I scroll the website and the point where I am now is at height more than 100 vh, might be
+       150vh, etc, so in that case page1 will end at that 100% height only, but I do wan these1 or the video to be played in the entire height of the website's background.
+       So, I will make it's minimum height as 100h, and when I scroll the website and crosses the 100vh height
+       i.e. the min-height, that page1 ill still be there, and that video will still get played, because, now height will increase automatically till he end of the website, because, here I haven't provided the actual height of the page1, instead of which, I have provided the min-height for the page1 or the video section */
+    min-height: 100vh;
     width: 100%;
     z-index: 10;
 }
@@ -231,4 +237,74 @@ Let's say here we are writing that background line of text "EAT. DRINK. PLAY." *
 #about-us-in {
     width: 50%;
     text-align: center;
+}
+
+
+/* HOVERING CARDS */
+.cards-container {
+    /* background-color: red; */
+    position: relative;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 70px;
+    z-index: 10;
+}
+
+.cards {
+    /* background-color: blue; */
+    width: 20%;
+    height: 80%;
+    border-radius: 30px;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    transition: all ease 0.6s;
+}
+
+#card1 {
+    background-image: url(https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/home-toptracer-1024x682.jpg?strip=all&lossy=1&sharp=1&ssl=1);
+}
+
+#card2 {
+    background-image: url(https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/hero-4-1024x1024.jpg?strip=all&lossy=1&sharp=1&ssl=1);
+}
+
+#card3 {
+    background-image: url(https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/home-lessons-1024x682.jpg?strip=all&lossy=1&sharp=1&ssl=1);
+}
+
+.overlay {
+    background-color: #95C11E;
+    height: 100%;
+    width: 100%;
+    padding: 30px;
+    padding-top: 60px;
+    opacity: 0;
+    transition: all ease-in-out 1.5s;
+}
+
+.overlay h4 {
+    text-align: center;
+    color: #000;
+    font-size: 30px;
+    text-transform: uppercase;
+    white-space: no-wrap;
+    margin-bottom: 20px;
+    font-weight: 800;
+}
+
+.overlay p {
+    color: #000;
+    font-size: 18px;
+    text-align: justify;
+}
+
+.cards:hover .overlay {
+    opacity: 1;
+}
+
+.cards:hover {
+    transform: rotate3d(-1, -5, 0, 20deg);
 }
