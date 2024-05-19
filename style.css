@@ -308,3 +308,27 @@ Let's say here we are writing that background line of text "EAT. DRINK. PLAY." *
 .cards:hover {
     transform: rotate3d(-1, -5, 0, 20deg);
 }
+
+#green-div {
+    height: 30vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(to left bottom, #119f3a, #ace022);
+}
+
+#green-div h4 {
+    width: 45%;
+    line-height: 50px;
+    color: #000;
+    text-align: center;
+    font-weight: 800;
+    font-size: 27px;
+    text-transform: uppercase;
+}
+
+#green-div img {
+    height: 100%;
+    width: 14%;
+    object-fit: cover;
+}
